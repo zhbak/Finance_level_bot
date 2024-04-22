@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  redis:
+    image: redis:latest
+    restart: always
+    ports:
+      - "6379:6379"
+    command: redis-server --requirepass ${REDIS_PASSWORD} --user default:{REDIS_USERNAME} ~*
+    env_file:
+      - stack.env
+  
+  bot:
+    build: 
+      context: .
+    env_file:
+      - stack.env
+    container_name: finance_level_bot
