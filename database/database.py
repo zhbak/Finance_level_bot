@@ -1,7 +1,7 @@
 from redis.asyncio import ConnectionPool, Redis
 from database.config import redis_host, redis_port, redis_username, redis_password
 
-pool = ConnectionPool(host=redis_host, port=redis_port, db=0, username=redis_username, password=redis_password, decode_responses=True)
+pool = ConnectionPool(host=redis_host, port=redis_port, username=redis_username, password=redis_password, decode_responses=True)
 
 # redis executor
 async def execute_redis_command(redis_pool, command: str, *args, **kwargs):
