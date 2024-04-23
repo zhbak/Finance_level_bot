@@ -7,8 +7,6 @@ services:
     ports:
       - "6379:6379"
     container_name: redis
-    env_file:
-      - .stack
 #    networks:
 #      - main-net
   
@@ -17,7 +15,7 @@ services:
       context: .
     restart: always
     env_file:
-      - .stack
+      - stack.env
     container_name: finance_level_bot
     #    networks:
     #      - main-net
