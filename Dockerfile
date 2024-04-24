@@ -1,5 +1,5 @@
 FROM python:3.11-alpine
-RUN mkdir /finance_lvel_bot
+RUN mkdir /finance_level_bot
 WORKDIR /finance_level_bot
 COPY requirements.txt .
 RUN pip install -r requirements.txt
