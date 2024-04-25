@@ -1,13 +1,22 @@
 version: '3.8'
 services:
   redis:
-    build: 
-      context: .
-      dockerfile: Dockerfile_redis
+    image: redis:latest
     restart: always
-    ports:
+    command: --save 60 1 --loglevel critical
+    ports: 
       - "6379:6379"
     container_name: redis
+
+#  redis:
+#    build: 
+#      context: .
+#      dockerfile: Dockerfile_redis
+#      privileged: true
+#    restart: always
+#    ports:
+#      - "6379:6379"
+#    container_name: redis
    
   
   bot:

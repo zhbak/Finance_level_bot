@@ -1,2 +1,4 @@
 FROM redis:latest
-RUN echo "vm.overcommit_memory = 1" >> /etc/sysctl.conf
+COPY init.sh /usr/local/bin/init.sh
+RUN chmod +x /usr/local/bin/init.sh
+CMD ["/usr/local/bin/init.sh"]
