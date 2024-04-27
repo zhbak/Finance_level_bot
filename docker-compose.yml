@@ -3,7 +3,7 @@ services:
   redis:
     image: redis:latest
     restart: always
-    #command: --save 60 1 --loglevel nothing
+    command: redis-server --save 60 1 --loglevel debug
     ports: 
       - "6379:6379"
     container_name: redis
