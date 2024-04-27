@@ -1,7 +1,12 @@
 from redis.asyncio import ConnectionPool, Redis
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+redis_pass = os.environ.get("REDIS_PASSWORD")
 
 #pool = ConnectionPool.from_url("redis://redis:6379/0")
-pool = ConnectionPool.from_url("redis://:Da_Nang@redis:6379/0")
+pool = ConnectionPool.from_url(f"redis://:{redis_pass}@redis:6379/0")
 #pool = ConnectionPool(host=redis_host, port=redis_port, decode_responses=True)
 
 # redis executor
