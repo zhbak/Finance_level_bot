@@ -1,6 +1,7 @@
 from redis.asyncio import ConnectionPool, Redis
 
-pool = ConnectionPool.from_url(f"redis://redis:6379/0")
+#pool = ConnectionPool.from_url("redis://redis:6379/0")
+pool = ConnectionPool.from_url("redis://:Da_Nang@redis:6379/0")
 #pool = ConnectionPool(host=redis_host, port=redis_port, decode_responses=True)
 
 # redis executor

@@ -3,9 +3,11 @@ services:
   redis:
     image: redis:latest
     restart: always
-    command: redis-server --save 60 1 --loglevel debug
+    command: redis-server --save 60 1 --loglevel debug --requirepass ${REDIS_PASSWORD}
     ports: 
       - "6379:6379"
+    env_file:
+      - stack.env
     container_name: redis
 
 #  redis:
