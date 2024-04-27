@@ -55,7 +55,7 @@ def send_question(bot):
             await bot.answer_callback_query(callback_query_id=call.id)
         
         except Exception as e:
-            await bot.send_message(chat_id=chat_id, text=f"Я не знаю как обработать эту команду 👾", parse_mode="HTML")
+            await bot.send_message(chat_id=chat_id, text=f"Я не знаю как обработать эту команду 👾\n\nПопробуй начать заново: /start", parse_mode="HTML")
             print(f"{e}=")
 
 
