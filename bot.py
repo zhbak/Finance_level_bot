@@ -1,7 +1,8 @@
+import logging
 import time, asyncio
 from bot_structure import handlers, config
 
-
+logging.basicConfig(level=logging.ERROR)
     
 handlers.send_welcome(config.bot)
 handlers.send_question(config.bot)
@@ -18,4 +19,4 @@ if __name__ == "__main__":
             asyncio.run(main())
         except Exception as e:
             print(f"Exception occurred: {e}")
-            time.sleep(15)  # Пауза перед следующей попыткой
+            time.sleep(1)  # Пауза перед следующей попыткой
