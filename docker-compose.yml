@@ -4,8 +4,8 @@ services:
     image: redis:latest
     restart: always
     command: redis-server --save 3600 1 --loglevel warning --requirepass ${REDIS_PASSWORD}
-    ports: 
-      - "6379:6379"
+    expose: 
+      - "6379"
     env_file:
       - stack.env
     container_name: redis
